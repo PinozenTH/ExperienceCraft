@@ -1,0 +1,6 @@
+name: SimplePlugin
+version: '0.1'
+main: com.pinont.simplePlugin.SimplePlugin
+api-version: '1.21'
+authors: [ PinozenTH ]
+description: This is an example plugin that is a part of PiXLib plugin
