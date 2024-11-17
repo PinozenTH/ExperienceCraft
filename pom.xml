@@ -3,13 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.pinont</groupId>
-    <artifactId>SimplePlugin</artifactId>
+    <artifactId>ExperienceCraft</artifactId>
     <version>0.1</version>
     <packaging>jar</packaging>
 
-    <name>SimplePlugin</name>
+    <name>ExperienceCraft</name>
 
     <properties>
         <java.version>21</java.version>
@@ -67,7 +66,7 @@
                                 <resource>
                                     <directory>${project.build.directory}</directory>
                                     <includes>
-                                        <include>armored-smp-1.0-SNAPSHOT.jar</include>
+                                        <include>${project.name}-${project.version}.jar</include>
                                     </includes>
                                 </resource>
                             </resources>
@@ -86,6 +85,10 @@
 
     <repositories>
         <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
+        <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
@@ -97,6 +100,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>4.8.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.21.1-R0.1-SNAPSHOT</version>
@@ -105,7 +114,8 @@
         <dependency>
             <groupId>com.pinont</groupId>
             <artifactId>pixlib</artifactId>
-            <version>1.02-snapshot</version>
+            <version>1.04-snapshot</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
