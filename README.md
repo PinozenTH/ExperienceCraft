@@ -1,6 +1,5 @@
-# Simple Plugin
-this plugin is a template of my plugin that includes [PiXLib library](github.com/PinozenTH/PiXLib)
+# Experience Craft
 
-## How to use
-
-Simply click use it as a template in the top right corner of the repository and start coding!
+This plugin provided a new experience of playing minecraft
+By removing crafting tools to mining based on experience to upgrade items
+And player can only craft items by using experiences

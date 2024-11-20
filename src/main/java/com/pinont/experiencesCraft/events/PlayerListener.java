@@ -1,9 +1,9 @@
 package com.pinont.experiencesCraft.events;
 
-import com.pinont.experiencesCraft.Core;
-import com.pinont.piXLib.api.creator.ItemCreator;
-import com.pinont.piXLib.api.utils.Common;
-import com.pinont.piXLib.api.utils.enums.PersisDataType;
+import com.pinont.experiences.api.creator.ItemCreator;
+import com.pinont.experiences.api.utils.Common;
+import com.pinont.experiences.api.utils.enums.PersisDataType;
+import com.pinont.experiencesCraft.Main;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
@@ -113,7 +113,7 @@ public class PlayerListener implements Listener {
         };
     }
 
-    private final NamespacedKey blockMined = new NamespacedKey(Core.plugin, "block_mined"); // namespaced key for block mined
+    private final NamespacedKey blockMined = new NamespacedKey(Main.plugin, "block_mined"); // namespaced key for block mined
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
@@ -148,7 +148,7 @@ public class PlayerListener implements Listener {
                         .setType(upgrade(mainHandItem.getType())) // upgrade the item
                         .setPersisDataContainer("block_mined", 0, PersisDataType.INT); // reset the xp
                 if (mainHandItem.getType().name().toLowerCase().split("_")[0].equals("netherite")) { // check if the item is netherite
-                    int max_xp = container.getOrDefault(new NamespacedKey(Core.plugin, "max_xp"), PersistentDataType.INTEGER, 16384); // get the max xp
+                    int max_xp = container.getOrDefault(new NamespacedKey(Main.plugin, "max_xp"), PersistentDataType.INTEGER, 16384); // get the max xp
                     item.setPersisDataContainer("max_xp", max_xp * 2, PersisDataType.INT); // double the max xp
                 }
                 player.getInventory().setItemInMainHand(item.create());
@@ -159,7 +159,7 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
         Block block = event.getBlock();
-        block.setMetadata("not_nature", new FixedMetadataValue(Core.plugin, true)); // set block metadata to not_nature
+        block.setMetadata("not_nature", new FixedMetadataValue(Main.plugin, true)); // set block metadata to not_nature
     }
 
     // TODO: When Ever player gets damaged, try adding stats and setup leveling systems

@@ -1,10 +1,10 @@
 package com.pinont.experiencesCraft.ItemCreator;
 
-import com.pinont.experiencesCraft.Core;
-import com.pinont.piXLib.api.creator.ItemCreator;
-import com.pinont.piXLib.api.menus.Button;
-import com.pinont.piXLib.api.menus.MenuCreator;
-import com.pinont.piXLib.api.utils.Common;
+import com.pinont.experiences.api.creator.ItemCreator;
+import com.pinont.experiences.api.menus.Button;
+import com.pinont.experiences.api.menus.Menu;
+import com.pinont.experiences.api.utils.Common;
+import com.pinont.experiencesCraft.Main;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -12,7 +12,7 @@ import org.bukkit.metadata.FixedMetadataValue;
 
 import java.util.Arrays;
 
-public class ItemSelector extends MenuCreator {
+public class ItemSelector extends Menu {
 
     public Material[] items = Common.itemOnlyMaterial();
 
@@ -61,7 +61,7 @@ public class ItemSelector extends MenuCreator {
             @Override
             public void onClick(Player player) {
                 player.closeInventory();
-                player.setMetadata("searching", new FixedMetadataValue(Core.plugin, true));
+                player.setMetadata("searching", new FixedMetadataValue(Main.plugin, true));
             }
         });
         if (page < max_page) {

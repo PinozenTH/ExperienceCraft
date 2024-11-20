@@ -1,6 +1,6 @@
 package com.pinont.experiencesCraft.events;
 
-import com.pinont.experiencesCraft.Core;
+import com.pinont.experiencesCraft.Main;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
@@ -14,7 +14,7 @@ public class BlockListener implements Listener {
     public void onBlockGenerate(BlockFormEvent event) {
         Block block = event.getBlock();
         switch (block.getType()) {
-            case Material.WATER, Material.LAVA, Material.FIRE, Material.CAVE_AIR, Material.COBBLESTONE, Material.STONE -> block.setMetadata("not_nature", new FixedMetadataValue(Core.plugin, true));
+            case Material.WATER, Material.LAVA, Material.FIRE, Material.CAVE_AIR, Material.COBBLESTONE, Material.STONE -> block.setMetadata("not_nature", new FixedMetadataValue(Main.plugin, true));
         }
     }
 

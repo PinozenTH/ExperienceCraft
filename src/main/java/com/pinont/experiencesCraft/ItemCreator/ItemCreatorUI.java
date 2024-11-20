@@ -1,17 +1,17 @@
 package com.pinont.experiencesCraft.ItemCreator;
 
-import com.pinont.experiencesCraft.Core;
-import com.pinont.piXLib.api.creator.ItemCreator;
-import com.pinont.piXLib.api.menus.Button;
-import com.pinont.piXLib.api.menus.MenuCreator;
-import com.pinont.piXLib.api.menus.Props;
-import com.pinont.piXLib.api.utils.Common;
+import com.pinont.experiences.api.creator.ItemCreator;
+import com.pinont.experiences.api.menus.Button;
+import com.pinont.experiences.api.menus.Menu;
+import com.pinont.experiences.api.menus.Props;
+import com.pinont.experiences.api.utils.Common;
+import com.pinont.experiencesCraft.Main;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
 
-public class ItemCreatorUI extends MenuCreator {
+public class ItemCreatorUI extends Menu {
 
     public ItemStack item = new ItemCreator(new ItemStack(Material.IRON_INGOT)).setDisplayName("&cItem Not Set").setLore(Common.colorize("&e&lClick to select an entity")).create();
     public int amount = 0;
@@ -62,7 +62,7 @@ public class ItemCreatorUI extends MenuCreator {
     private void getInput(Player player) {
         player.closeInventory();
         player.sendMessage("Please input value in chat");
-        player.setMetadata("EntityCreator", new FixedMetadataValue(Core.plugin, true));
+        player.setMetadata("EntityCreator", new FixedMetadataValue(Main.plugin, true));
         CreatorListener.item.put(player, item);
     }
 

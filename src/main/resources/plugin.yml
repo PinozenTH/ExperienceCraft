@@ -1,6 +1,18 @@
-name: ${project.name}
-version: ${project.version}
-main: ${project.mainClass}
+name: ExperienceCraft
+version: '0.1'
+main: com.pinont.experiencesCraft.Main
 api-version: '1.21'
 authors: [ PinozenTH ]
-description: ${project.description}
+description: This is an example plugin that is a part of Experience Lib plugin
+
+commands:
+  trash:
+    aliases:
+      - t
+    description: Trash item in hand
+    usage: /trash
+    permission: experiencecraft.trash
+  spawn:
+    description: Spawn entity
+    usage: /spawn
+    permission: experiencecraft.spawnables
