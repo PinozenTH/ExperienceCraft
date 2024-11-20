@@ -1,20 +1,6 @@
-name: ExperienceCraft
-version: '0.1'
-main: com.pinont.experiencesCraft.Core
+name: ${project.name}
+version: ${project.version}
+main: ${project.mainClass}
 api-version: '1.21'
 authors: [ PinozenTH ]
-description: This is an example plugin that is a part of PiXLib plugin
-softdepend: [ PiXLib ]
-
-commands:
-  trash:
-    description: Trash item in hand
-    usage: /trash
-    permission: experiencecraft.trash
-  itemcreator:
-    aliases:
-      - ic
-      - itemcreate
-    description: Spawn entity
-    usage: /entity
-    permission: experiencecraft.entity
+description: ${project.description}
